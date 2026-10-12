@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Website-Editor v0.4 · Vorlage v0.4">
+<meta name="generator" content="Website-Editor v0.5 · Vorlage v0.5">
 <title>Ausbildung am Boden</title>
 <link rel="icon" id="favicon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%23a3195b%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2242%22%20font-family%3D%22Arial%22%20font-size%3D%2226%22%20font-weight%3D%22700%22%20text-anchor%3D%22middle%22%20fill%3D%22%23fff%22%3EAA%3C%2Ftext%3E%3C%2Fsvg%3E">
-<!-- Erstellt mit dem Website-Editor v0.4. Inhalte bitte mit dem Editor bearbeiten:
+<!-- Erstellt mit dem Website-Editor v0.5. Inhalte bitte mit dem Editor bearbeiten:
      Der Editor liest den Block "site-data" (Inhalte, Einstellungen) und "site-images" (Bilder)
      und schreibt beim Speichern die komplette Datei mit der aktuellen Vorlage neu. -->
 <style id="site-css">
-/* Website-Vorlage v0.4 – erzeugt mit Website-Editor (Design über CI-Variablen) */
+/* Website-Vorlage v0.5 – erzeugt mit Website-Editor (Design über CI-Variablen) */
 :root{--p:#006ec7;--a:#28dcaa;--tx:#1a1a1a;--bg:#fff;--sf:#f6f5f3;--ln:#e4e0dc;--mut:#6b6560;--pi:#fff;
   --font:system-ui,"Segoe UI",Arial,sans-serif;--hfont:var(--font);--r:6px;--logoH:36px;--maxw:1100px;--hdH:64px;--sideW:270px}
 *{box-sizing:border-box}
@@ -244,6 +244,14 @@ hr.el{border:0;border-top:1px solid var(--ln);margin:32px 0}
 .evm{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--mut);font-size:.92rem;margin-bottom:10px}
 .evdlg .tags{margin-bottom:12px}
 .evimg{max-width:100%;border-radius:var(--r);margin-bottom:12px;display:block}
+/* Filter für Raster und Inhaltsblöcke */
+.sfil{margin-top:20px}
+.fhide{display:none!important}
+.lay-raster .sfil+.secs{margin-top:0}
+.lay-raster .sec.fc{border-top:4px solid var(--sc)}
+.stg{margin:-6px 0 12px}
+.blk>summary .tags{flex:0 1 auto;justify-content:flex-end}
+.sfnone{margin:16px 0}
 /* Footer */
 .ft{background:var(--sf);border-top:1px solid var(--ln)}
 .ft-in{max-width:calc(var(--maxw) + 48px);margin:0 auto;padding:26px 24px;display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px 32px;font-size:.9rem;color:var(--mut)}
@@ -314,10 +322,10 @@ hr.el{border:0;border-top:1px solid var(--ln);margin:32px 0}
  "meta": {
   "generator": "Website-Editor",
   "format": 1,
-  "version": "v0.3.1",
+  "version": "v0.3.2",
   "stand": "12.10.2026",
-  "editor": "v0.4",
-  "vorlage": "v0.4"
+  "editor": "v0.5",
+  "vorlage": "v0.5"
  },
  "site": {
   "titel": "Ausbildung am Boden",
@@ -605,7 +613,7 @@ hr.el{border:0;border-top:1px solid var(--ln);margin:32px 0}
       {
        "id": "2026-09-19-abzeichen-waldbroel",
        "titel": "Abzeichen-Lehrgang im Oberbergischen",
-       "blocktyp": "abzeichen",
+       "blocktyp": "lehrgang",
        "offen": true,
        "elemente": [
         {
@@ -632,7 +640,12 @@ hr.el{border:0;border-top:1px solid var(--ln);margin:32px 0}
           }
          ]
         }
-       ]
+       ],
+       "werte": {
+        "filter": [
+         "neuer-wert"
+        ]
+       }
       },
       {
        "id": "2026-07-11-fuehrtraining-essen",
@@ -658,7 +671,12 @@ hr.el{border:0;border-top:1px solid var(--ln);margin:32px 0}
           }
          ]
         }
-       ]
+       ],
+       "werte": {
+        "filter": [
+         "neuer-wert"
+        ]
+       }
       },
       {
        "id": "2026-05-23-pm-seminar-kaiserslautern",
@@ -703,7 +721,23 @@ hr.el{border:0;border-top:1px solid var(--ln);margin:32px 0}
        ]
       }
      ],
-     "einleitung": "<p>Rückblicke auf vergangene Lehrgänge, Seminare und Projekte. Der neueste Bericht ist aufgeklappt – ältere Berichte öffnest du mit einem Klick.<\/p>"
+     "einleitung": "<p>Rückblicke auf vergangene Lehrgänge, Seminare und Projekte. Der neueste Bericht ist aufgeklappt – ältere Berichte öffnest du mit einem Klick.<\/p>",
+     "filter": [
+      {
+       "id": "filter",
+       "name": "Kategorie",
+       "optionen": [
+        {
+         "id": "neuer-wert",
+         "name": "Lehrgang"
+        },
+        {
+         "id": "neuer-wert-2",
+         "name": "Turnier"
+        }
+       ]
+      }
+     ]
     }
    ]
   },
@@ -2466,7 +2500,7 @@ hr.el{border:0;border-top:1px solid var(--ln);margin:32px 0}
 {}
 </script>
 <script id="site-runtime">
-/* Website-Vorlage v0.4 – Darstellungslogik (erzeugt mit Website-Editor, wird beim Speichern erneuert) */
+/* Website-Vorlage v0.5 – Darstellungslogik (erzeugt mit Website-Editor, wird beim Speichern erneuert) */
 (function(){
 'use strict';
 const D = JSON.parse(document.getElementById('site-data').textContent);
@@ -2582,19 +2616,20 @@ const els = list=>(list||[]).filter(vis).map(el).join('');
 /* ---------- Abschnitte, Seiten, Kapitel ---------- */
 function secHtml(k, s, a, lay, i){
   const id = k.id+'/'+s.id+'/'+a.id, body = els(a.elemente);
+  const sf = (lay==='raster'||lay==='bloecke') && (s.filter||[]).length, tg = sf ? tagsOf(s, a) : '', fc = sf ? colorOf(s, a) : '';
   if(lay==='bloecke'){
     const bt = (D.blocktypen||[]).find(b=>b.id===a.blocktyp) || {name:'', farbe:'var(--p)'};
-    return `<details class="blk${drc(a)}" id="${id}" style="--bc:${esc(bt.farbe)}" ${a.offen?'open':''}><summary><span class="bdot"></span><span class="bt">${esc(a.titel)}</span>${bt.name?`<span class="btag">${esc(bt.name)}</span>`:''}</summary><div class="bb">${body||'<p class="empty">Noch kein Inhalt.</p>'}</div></details>`;
+    return `<details class="blk${drc(a)}" id="${id}" data-a="${esc(a.id)}" style="--bc:${esc(fc||bt.farbe)}" ${a.offen?'open':''}><summary><span class="bdot"></span><span class="bt">${esc(a.titel)}</span>${tg?`<span class="tags">${tg}</span>`:''}${bt.name?`<span class="btag">${esc(bt.name)}</span>`:''}</summary><div class="bb">${body||'<p class="empty">Noch kein Inhalt.</p>'}</div></details>`;
   }
   if(lay==='hero' && i===0) return `<section class="sec herosec${drc(a)}" id="${id}">${a.titelAusblenden?'':`<h2>${esc(a.titel)}</h2>`}${body}</section>`;
-  return `<section class="sec ${esc(a.stil||'')}${drc(a)}" id="${id}">${a.titelAusblenden?'':`<h3 class="st">${esc(a.titel)}</h3>`}${body}</section>`;
+  return `<section class="sec ${esc(a.stil||'')}${drc(a)}${fc?' fc':''}" id="${id}" data-a="${esc(a.id)}"${fc?` style="--sc:${esc(fc)}"`:''}>${a.titelAusblenden?'':`<h3 class="st">${esc(a.titel)}</h3>`}${tg?`<div class="tags stg">${tg}</div>`:''}${body}</section>`;
 }
 function pageHtml(k, s, cont){
   const lay = s.layout||'standard', id = k.id+'/'+s.id;
   const toc = s.sprungleiste && s.abschnitte.length>1 ? `<nav class="toc" aria-label="Abschnitte">${s.abschnitte.map(a=>`<a href="#${id}/${a.id}">${esc(a.titel)}</a>`).join('')}</nav>` : '';
   const head = (s.titelAusblenden ? '' : `<h2 class="pt">${esc(s.titel)}</h2>`) + (s.einleitung ? `<div class="lead rt">${s.einleitung}</div>` : '');
   return `<article class="page lay-${esc(lay)}${drc(s)}" id="${id}"><header class="ph">${cont?'':`<div class="crumb"><a href="#${k.id}">${esc(k.titel)}</a></div>`}${head}${toc}</header>
-    <div class="secs">${s.abschnitte.map((a,i)=>secHtml(k,s,a,lay,i)).join('')}</div>${lay==='kalender'||lay==='karte'?`<div class="mod mod-${lay}" data-pg="${id}"></div>`:''}</article>`;
+    ${(lay==='raster'||lay==='bloecke') && (s.filter||[]).some(f=>(f.optionen||[]).length) && s.abschnitte.length>1 ? `<div class="sfil" data-pg="${id}"></div>` : ''}<div class="secs">${s.abschnitte.map((a,i)=>secHtml(k,s,a,lay,i)).join('')}</div>${lay==='kalender'||lay==='karte'?`<div class="mod mod-${lay}" data-pg="${id}"></div>`:''}</article>`;
 }
 function excerpt(s){
   let t = strip(s.einleitung);
@@ -2634,7 +2669,23 @@ function fmatch(s, st, e){
   return Object.keys(st.f).every(fid=>!st.f[fid] || ((e.werte||{})[fid]||[]).includes(st.f[fid]));
 }
 const MOD = {};
-function initMods(root){ $$('.mod', root).forEach(m=>{ const P = PG[m.dataset.pg]; if(P) MOD[m.dataset.pg] = P.s.layout==='kalender' ? kalender(m, P) : karte(m, P); }); }
+function initMods(root){ $$('.mod', root).forEach(m=>{ const P = PG[m.dataset.pg]; if(P) MOD[m.dataset.pg] = P.s.layout==='kalender' ? kalender(m, P) : karte(m, P); });
+  $$('.sfil', root).forEach(m=>{ const P = PG[m.dataset.pg]; if(P) secFilter(m, P); }); }
+/* Filter für Raster und Inhaltsblöcke: blendet Abschnitte ein und aus */
+function secFilter(m, {k, s}){
+  const st = {q:'', f:{}}, wrap = m.nextElementSibling, A = s.abschnitte;
+  const txt = {}; A.forEach(a=>txt[a.id] = [a.titel, ...(a.elemente||[]).filter(vis).map(elText), (s.filter||[]).map(f=>((a.werte||{})[f.id]||[]).map(v=>(optOf(s,f.id,v)||{}).name).join(' ')).join(' ')].join(' ').toLowerCase());
+  m.innerHTML = fbar(s);
+  let none = document.createElement('p'); none.className = 'empty sfnone'; none.textContent = T.keine; none.hidden = true; wrap.after(none);
+  function render(){
+    let n = 0;
+    $$(':scope > [data-a]', wrap).forEach(el=>{ const a = A.find(x=>x.id===el.dataset.a); if(!a) return;
+      const ok = (!st.q || st.q.split(/\s+/).every(w=>txt[a.id].includes(w))) && Object.keys(st.f).every(fid=>!st.f[fid] || ((a.werte||{})[fid]||[]).includes(st.f[fid]));
+      el.classList.toggle('fhide', !ok); if(ok) n++; });
+    $('.fcnt', m).textContent = n+' '+T.von+' '+A.length; none.hidden = n>0;
+  }
+  bindBar(m, st, render); render();
+}
 function entryDlg(s, e){
   $('#evBody').innerHTML = `<div class="evm">${e.datum?`<span>📅 ${esc(range(e))}</span>`:''}${e.zeit?`<span>🕑 ${esc(e.zeit)}</span>`:''}${e.ort||e.adresse?`<span>📍 ${esc([e.ort,e.adresse].filter(Boolean).join(', '))}</span>`:''}${e.telefon?`<span>☎ <a href="tel:${esc(e.telefon)}">${esc(e.telefon)}</a></span>`:''}${e.email?`<span>✉ <a href="mailto:${esc(e.email)}">${esc(e.email)}</a></span>`:''}</div>
     <div class="tags">${tagsOf(s,e)}</div>${img(e.bild)?`<img class="evimg" src="${esc(img(e.bild))}" alt="">`:''}<div class="rt">${e.text||''}</div>${linkBtn(e)?`<div class="btns">${linkBtn(e)}</div>`:''}`;
@@ -2807,7 +2858,7 @@ function setActive(h){
   if(k) $$(`.nav a[href="#${k}"]`).forEach(a=>a.classList.add('on'));
   if(s) $$(`.nav a[href="#${k}/${s}"]`).forEach(a=>a.classList.add('on'));
 }
-function openTo(t){ for(let d=t; d; d=d.parentElement) if(d.tagName==='DETAILS') d.open = true; }
+function openTo(t){ if(t.classList.contains('fhide')){ const fb=t.parentElement.previousElementSibling; const r=fb&&fb.querySelector('.freset'); if(r) r.click(); } for(let d=t; d; d=d.parentElement) if(d.tagName==='DETAILS') d.open = true; }
 function closeAll(){ document.body.classList.remove('navopen'); ['srDlg','smDlg','lbDlg','evDlg'].forEach(id=>{ const d=document.getElementById(id); if(d && d.open) d.close(); }); }
 function route(h, smooth){
   h = decodeURIComponent(h||'').replace(/^#/,'');
@@ -2875,7 +2926,7 @@ K.forEach(k=>{
   IDX.push({h:k.id, t:k.titel, c:'Kapitel', x:[strip(k.einleitung), ...k.elemente.map(elText)].join(' ')});
   k.seiten.forEach(s=>{
     IDX.push({h:k.id+'/'+s.id, t:s.titel, c:k.titel, x:strip(s.einleitung)});
-    s.abschnitte.forEach(a=>IDX.push({h:k.id+'/'+s.id+'/'+a.id, t:a.titel, c:k.titel+' › '+s.titel, x:(a.elemente||[]).filter(vis).map(elText).join(' ')}));
+    s.abschnitte.forEach(a=>IDX.push({h:k.id+'/'+s.id+'/'+a.id, t:a.titel, c:k.titel+' › '+s.titel, x:[(a.elemente||[]).filter(vis).map(elText).join(' '), (s.filter||[]).map(f=>((a.werte||{})[f.id]||[]).map(v=>(optOf(s,f.id,v)||{}).name).join(' ')).join(' ')].join(' ')}));
     if(s.layout==='kalender'||s.layout==='karte') (s.eintraege||[]).forEach(e=>IDX.push({h:k.id+'/'+s.id+'/'+e.id, t:e.titel, c:k.titel+' › '+s.titel, x:[range(e), e.zeit, e.ort, e.adresse, strip(e.text), (s.filter||[]).map(f=>((e.werte||{})[f.id]||[]).map(v=>(optOf(s,f.id,v)||{}).name).join(' ')).join(' ')].filter(Boolean).join(' · ')}));
   });
 });
